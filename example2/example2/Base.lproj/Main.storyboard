@@ -50,6 +50,14 @@
                                 <color key="textColor" red="1" green="0.21882235862127863" blue="0.27985578780553833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="0.62740995608445183" blue="0.38185030321285007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB1-fq-FLI">
+                                <rect key="frame" x="118" y="382" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログインをスキップ"/>
+                                <connections>
+                                    <segue destination="mgO-RV-OQL" kind="show" id="exf-j6-CPW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -86,6 +94,9 @@
                                 <rect key="frame" x="102" y="282" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="GitHubのユーザ名を取得"/>
+                                <connections>
+                                    <action selector="getGitHubName:" destination="mgO-RV-OQL" eventType="touchUpInside" id="x7n-qE-p7L"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GitHubユーザ名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMr-ax-uNz">
                                 <rect key="frame" x="126" y="229" width="123" height="21"/>
@@ -99,6 +110,7 @@
                     </view>
                     <connections>
                         <outlet property="sessionKey" destination="BIu-56-tqm" id="S08-yj-qXO"/>
+                        <outlet property="userName" destination="dMr-ax-uNz" id="enc-ep-bRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyR-qI-4l1" userLabel="First Responder" sceneMemberID="firstResponder"/>

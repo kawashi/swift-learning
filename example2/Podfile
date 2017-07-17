@@ -9,6 +9,7 @@ target 'example2' do
   
   pod 'RealmSwift'
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   target 'example2Tests' do
     inherit! :search_paths
