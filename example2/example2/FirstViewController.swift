@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FirstViewController: UIViewController {
     
@@ -19,6 +20,17 @@ class FirstViewController: UIViewController {
         
         do {
             let sessionKey = try Session.create(userID: UserID.text!, password: password.text!)
+
+            // セッション登録
+            let userSession = UserSession()
+            userSession.userID = 1
+            userSession.key = sessionKey
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll() // 一度全て削除する
+                realm.add(userSession)
+            }
+            
             moveNextPage()
         } catch {
             errorMessage.isHidden = false
